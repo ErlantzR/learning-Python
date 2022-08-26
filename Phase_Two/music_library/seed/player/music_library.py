@@ -1,3 +1,5 @@
+from dataclasses import dataclass
+
 class MusicLibrary:
     def __init__(self):
         self.songs_list = []
@@ -14,3 +16,12 @@ class MusicLibrary:
             return True
         
         return False
+
+@dataclass
+class Track:
+    title: str
+    artist: str
+    file: str
+
+    def __str__(self):
+        return f"{self.title} by {self.artist}"
